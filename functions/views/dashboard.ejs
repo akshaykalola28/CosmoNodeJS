@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Head-->
+<% include partials/head %>
+<body class="fix-header">
+<div class="preloader">
+    <svg class="circular" viewBox="25 25 50 50">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+    </svg>
+</div>
+
+<!-- Wrapper -->
+
+<div id="wrapper">
+
+    <!-- Topbar header - style you can find in pages.scss -->
+    <% include partials/header %>
+    <!-- End Top Navigation -->
+
+    <!-- Left Sidebar - style you can find in sidebar.scss  -->
+    <% include partials/sidebar.ejs %>
+    <!-- End Left Sidebar -->
+    <!-- Page Content -->
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row bg-title">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title">Dashboard</h4></div>
+            </div>
+
+            <!-- .row -->
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 col-xs-12">
+                    <div class="white-box analytics-info">
+                        <h3 class="box-title">Total Visit</h3>
+                        <ul class="list-inline two-part">
+                            <li>
+                                <div id="sparklinedash"></div>
+                            </li>
+                            <li class="text-right"><i class="ti-arrow-up text-success"></i> <span
+                                        class="counter text-success">659</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-xs-12">
+                    <div class="white-box analytics-info">
+                        <h3 class="box-title">Total Page Views</h3>
+                        <ul class="list-inline two-part">
+                            <li>
+                                <div id="sparklinedash2"></div>
+                            </li>
+                            <li class="text-right"><i class="ti-arrow-up text-purple"></i> <span
+                                        class="counter text-purple">869</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-xs-12">
+                    <div class="white-box analytics-info">
+                        <h3 class="box-title">Unique Visitor</h3>
+                        <ul class="list-inline two-part">
+                            <li>
+                                <div id="sparklinedash3"></div>
+                            </li>
+                            <li class="text-right"><i class="ti-arrow-up text-info"></i> <span
+                                        class="counter text-info">911</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--/.row -->
+
+            <!-- table -->
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12">
+                    <div class="white-box">
+                        <h3 class="box-title">Recent sales</h3>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>NAME</th>
+                                    <th>STATUS</th>
+                                    <th>DATE</th>
+                                    <th>PRICE</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td class="txt-oflo">Elite admin</td>
+                                    <td>SALE</td>
+                                    <td class="txt-oflo">April 18, 2017</td>
+                                    <td><span class="text-success">$24</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td class="txt-oflo">Real Homes WP Theme</td>
+                                    <td>EXTENDED</td>
+                                    <td class="txt-oflo">April 19, 2017</td>
+                                    <td><span class="text-info">$1250</span></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td class="txt-oflo">Ample Admin</td>
+                                    <td>EXTENDED</td>
+                                    <td class="txt-oflo">April 19, 2017</td>
+                                    <td><span class="text-info">$1250</span></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td class="txt-oflo">Medical Pro WP Theme</td>
+                                    <td>TAX</td>
+                                    <td class="txt-oflo">April 20, 2017</td>
+                                    <td><span class="text-danger">-$24</span></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td class="txt-oflo">Hosting press html</td>
+                                    <td>SALE</td>
+                                    <td class="txt-oflo">April 21, 2017</td>
+                                    <td><span class="text-success">$24</span></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td class="txt-oflo">Digital Agency PSD</td>
+                                    <td>SALE</td>
+                                    <td class="txt-oflo">April 23, 2017</td>
+                                    <td><span class="text-danger">-$14</span></td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td class="txt-oflo">Helping Hands WP Theme</td>
+                                    <td>MEMBER</td>
+                                    <td class="txt-oflo">April 22, 2017</td>
+                                    <td><span class="text-success">$64</span></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+        <% include partials/footer.ejs %>
+    </div>
+    <!-- End Page Content -->
+</div>
+<!-- End Wrapper -->
+<!-- All Jquery -->
+<script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Menu Plugin JavaScript -->
+<script src="plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+<!--slimscroll JavaScript -->
+<script src="js/jquery.slimscroll.js"></script>
+<!--Wave Effects -->
+<script src="js/waves.js"></script>
+<!--Counter js -->
+<script src="plugins/bower_components/waypoints/lib/jquery.waypoints.js"></script>
+<script src="plugins/bower_components/counterup/jquery.counterup.min.js"></script>
+<!-- chartist chart -->
+<script src="plugins/bower_components/chartist-js/dist/chartist.min.js"></script>
+<script src="plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Sparkline chart JavaScript -->
+<script src="plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="js/custom.min.js"></script>
+<script src="js/dashboard1.js"></script>
+<script src="plugins/bower_components/toast-master/js/jquery.toast.js"></script>
+
+<script src="js/script.js"></script>
+</body>
+
+</html>

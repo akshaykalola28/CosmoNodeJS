@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Head-->
+<% include partials/head %>
+<body class="fix-header">
+
+<!-- Preloader -->
+
+<div class="preloader">
+    <svg class="circular" viewBox="25 25 50 50">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+    </svg>
+</div>
+
+<!-- Wrapper -->
+
+<div id="wrapper">
+    <!-- Topbar header - style you can find in pages.scss -->
+    <% include partials/header %>
+    <!-- End Top Navigation -->
+    <!-- Left Sidebar - style you can find in sidebar.scss  -->
+    <% include partials/sidebar.ejs %>
+    <!-- End Left Sidebar -->
+
+    <!-- Page Content -->
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row bg-title">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title">Farmer List</h4></div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /row -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="white-box">
+                        <!-- <h3 class="box-title">List of Farmers</h3>-->
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th>Address</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <% users.forEach(function (user, i) { %>
+                                    <form action="/farmer/details" method="post">
+                                        <tr>
+                                            <td><%= i + 1 %></td>
+                                            <td><%= user.fname %></td>
+                                            <td><%= user.lname %></td>
+                                            <td><%= user.phone %></td>
+                                            <td><%= user.email %></td>
+                                            <td><%= user.address %></td>
+                                            <td>
+                                                <button name="id" value="<%= user.phone %>" class="btn btn-info">Show</button>
+                                            </td>
+                                        </tr>
+                                    </form>
+                                <% }); %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+        <!--Footer-->
+        <% include partials/footer.ejs %>
+    </div>
+    <!-- /#page-wrapper -->
+</div>
+<!-- /#wrapper -->
+<!-- Script -->
+<% include partials/script-name.ejs %>
+</body>
+
+</html>
